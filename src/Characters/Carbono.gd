@@ -58,4 +58,3 @@ func hor_movement(dir):
 	velocity.x = dir * speed
 	
 	animation = movement if dir != 0 else "stand"
-
