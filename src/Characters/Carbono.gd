@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 
+onready var active = false
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
 const WALK_SPEED = 100
@@ -25,19 +26,24 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var dir = 0
-	hor_movement(dir)
-	
+	if active:
+		hor_movement(dir)
+	else:
+		animation = "stand"
+		velocity.x = 0
+		
 	velocity += Vector2.DOWN * gravity_scale * earth_gravity * delta
 	
 	if Input.is_action_just_released("jump"):
 		jump_released = true
 		
-	if is_on_floor():
+	if is_on_floor() and active:
 		if Input.is_action_just_pressed("jump"):
 			velocity = Vector2.UP * jump_power
 			jump_released = false
 	else:
 		animation = "jump"
+	
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	$AnimatedSprite.play(animation)
