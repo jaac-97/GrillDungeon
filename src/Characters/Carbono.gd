@@ -4,6 +4,7 @@ extends KinematicBody2D
 signal interact
 
 onready var active = false
+onready var can_switch = false
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
 const WALK_SPEED = 100
@@ -33,7 +34,10 @@ func _process(delta):
 	else:
 		animation = "stand"
 		velocity.x = 0
-		
+	
+	if Input.is_action_just_pressed("interact") and can_switch:
+		emit_signal("interact")
+	
 	velocity += Vector2.DOWN * gravity_scale * earth_gravity * delta
 	
 	if Input.is_action_just_released("jump"):
@@ -67,3 +71,11 @@ func hor_movement(dir):
 	velocity.x = dir * speed
 	
 	animation = movement if dir != 0 else "stand"
+
+
+func _on_Switch_body_entered(body):
+	can_switch = true
+
+
+func _on_Switch_body_exited(body):
+	can_switch = false

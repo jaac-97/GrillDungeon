@@ -44,3 +44,6 @@ scale = Vector2( 2, 2 )
 
 [node name="Switch" parent="." instance=ExtResource( 4 )]
 position = Vector2( 910.219, 490.18 )
+[connection signal="interact" from="Carbono" to="Switch" method="_on_Carbono_interact"]
+[connection signal="body_entered" from="Switch" to="Carbono" method="_on_Switch_body_entered"]
+[connection signal="body_exited" from="Switch" to="Carbono" method="_on_Switch_body_exited"]
