@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 signal interact
 
+onready var can_switch = false
 onready var active = false
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
@@ -86,16 +87,25 @@ func hor_movement(dir):
 
 
 func activate_special():
-	if active and extra_jump_available:
+	if active and extra_jump_available and not can_switch:
 		if Input.is_action_just_pressed("special"):
 			velocity.y = 0
 			inflated = true
 			$AnimatedSprite.play("inflate")
 			$FloatTime.start()
-
+	elif can_switch and Input.is_action_just_pressed("special"):
+		emit_signal("interact")
 
 
 func _on_FloatTime_timeout():
 	if inflated:
 		$AnimatedSprite.play("deflate")
 		inflated = false
+
+
+func _on_Switch_body_entered(body):
+	can_switch = true
+
+
+func _on_Switch_body_exited(body):
+	can_switch = false

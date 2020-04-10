@@ -23,3 +23,10 @@ func _on_Carbono_interact():
 		hide()
 	else:
 		show()
+
+
+func _on_Hidriogio_interact():
+	if visible:
+		hide()
+	else:
+		show()

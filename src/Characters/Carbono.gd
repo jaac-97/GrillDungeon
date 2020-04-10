@@ -29,14 +29,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var dir = 0
+
 	if active:
 		hor_movement(dir)
 	else:
 		animation = "stand"
 		velocity.x = 0
 	
-	if Input.is_action_just_pressed("interact") and can_switch:
-		emit_signal("interact")
 	
 	velocity += Vector2.DOWN * gravity_scale * earth_gravity * delta
 	
@@ -71,6 +70,13 @@ func hor_movement(dir):
 	velocity.x = dir * speed
 	
 	animation = movement if dir != 0 else "stand"
+
+
+func activate_special():
+	
+	
+	if Input.is_action_just_pressed("special") and can_switch:
+		emit_signal("interact")
 
 
 func _on_Switch_body_entered(body):
