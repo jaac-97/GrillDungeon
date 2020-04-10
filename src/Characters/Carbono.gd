@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 
+signal interact
+
 onready var active = false
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
@@ -37,10 +39,11 @@ func _process(delta):
 	if Input.is_action_just_released("jump"):
 		jump_released = true
 		
-	if is_on_floor() and active:
-		if Input.is_action_just_pressed("jump"):
-			velocity = Vector2.UP * jump_power
-			jump_released = false
+	if is_on_floor():
+		if active:
+			if Input.is_action_just_pressed("jump"):
+				velocity = Vector2.UP * jump_power
+				jump_released = false
 	else:
 		animation = "jump"
 	
