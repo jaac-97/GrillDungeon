@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioRun3.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioRun2.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Modelo03/HidriogioStand.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioRun1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioGlobe1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioGlobe3.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioGlobe4.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioGlobe2.png" type="Texture" id=8]
+[ext_resource path="res://src/Characters/Hidriogio.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/Modelo03/HidrogioJump.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "run",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "inflate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "deflate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "inflated",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 14.9654
+
+[node name="Hidriogio" type="KinematicBody2D"]
+position = Vector2( 252.027, 150.357 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "inflated"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
