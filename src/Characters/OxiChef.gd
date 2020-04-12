@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody2D
 
 
@@ -5,8 +6,8 @@ signal interact
 
 onready var active = true
 # Declare member variables here. Examples:
-const RUN_SPEED = 200
-const WALK_SPEED = 100
+const RUN_SPEED = 230
+const WALK_SPEED = 130
 export var speed = WALK_SPEED
 var velocity = Vector2.ZERO
 var movement = ""
@@ -14,7 +15,7 @@ var animation = ""
 # Jump
 export var fall_gravity_scale = 100.0
 export var low_jump_gravity_scale = 200.0
-export var jump_power := 300.0
+export var jump_power := 400.0
 var jump_released = false
 # Physics
 export var gravity_scale = 100.0
