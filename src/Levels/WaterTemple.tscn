@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://RottenPixels.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/RottenPixels.tres" type="TileSet" id=1]
 
 [node name="WaterTemple" type="Node2D"]
 

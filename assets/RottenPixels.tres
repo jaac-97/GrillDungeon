@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" load_steps=368 format=2]
 
-[ext_resource path="res://RottenPixels/castle-tileset.png" type="Texture" id=1]
-[ext_resource path="res://RottenPixels/temple-tileset.png" type="Texture" id=2]
-[ext_resource path="res://RottenPixels/cave-platformer-tileset-16x16.png" type="Texture" id=3]
-[ext_resource path="res://RottenPixels/four-seasons-tileset.png" type="Texture" id=4]
-[ext_resource path="res://RottenPixels/Mario-tileset.png" type="Texture" id=5]
-[ext_resource path="res://RottenPixels/nature-paltformer-tileset-16x16.png" type="Texture" id=6]
-[ext_resource path="res://RottenPixels/tileset.png" type="Texture" id=7]
-[ext_resource path="res://RottenPixels/MarioRun1.png" type="Texture" id=8]
+[ext_resource path="res://assets/RottenPixels/castle-tileset.png" type="Texture" id=1]
+[ext_resource path="res://assets/RottenPixels/temple-tileset.png" type="Texture" id=2]
+[ext_resource path="res://assets/RottenPixels/cave-platformer-tileset-16x16.png" type="Texture" id=3]
+[ext_resource path="res://assets/RottenPixels/four-seasons-tileset.png" type="Texture" id=4]
+[ext_resource path="res://assets/RottenPixels/Mario-tileset.png" type="Texture" id=5]
+[ext_resource path="res://assets/RottenPixels/nature-paltformer-tileset-16x16.png" type="Texture" id=6]
+[ext_resource path="res://assets/RottenPixels/tileset.png" type="Texture" id=7]
+[ext_resource path="res://assets/RottenPixels/MarioRun1.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )

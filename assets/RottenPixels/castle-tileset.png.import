@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nature-paltformer-tileset-16x16.png-46f6cbbb2f3a56ea01288274c3a4b1e9.stex"
+path="res://.import/castle-tileset.png-657f961ae1b77d4b87d1a97e61d5cd70.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RottenPixels/nature-paltformer-tileset-16x16.png"
-dest_files=[ "res://.import/nature-paltformer-tileset-16x16.png-46f6cbbb2f3a56ea01288274c3a4b1e9.stex" ]
+source_file="res://assets/RottenPixels/castle-tileset.png"
+dest_files=[ "res://.import/castle-tileset.png-657f961ae1b77d4b87d1a97e61d5cd70.stex" ]
 
 [params]
 

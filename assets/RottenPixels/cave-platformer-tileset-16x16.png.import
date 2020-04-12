@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cave-platformer-tileset-16x16.png-887a2e37ddc93a73e4bc4bb89acbe514.stex"
+path="res://.import/cave-platformer-tileset-16x16.png-b3d0d4bb07bb0041c22245c2c51c6fb8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RottenPixels/cave-platformer-tileset-16x16.png"
-dest_files=[ "res://.import/cave-platformer-tileset-16x16.png-887a2e37ddc93a73e4bc4bb89acbe514.stex" ]
+source_file="res://assets/RottenPixels/cave-platformer-tileset-16x16.png"
+dest_files=[ "res://.import/cave-platformer-tileset-16x16.png-b3d0d4bb07bb0041c22245c2c51c6fb8.stex" ]
 
 [params]
 

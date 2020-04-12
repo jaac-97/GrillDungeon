@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/temple-tileset.png-50f1d70b3ee55d4dee6ba1f76b41780a.stex"
+path="res://.import/four-seasons-tileset.png-fdc860a935e73207c8cbf83ad7e254d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RottenPixels/temple-tileset.png"
-dest_files=[ "res://.import/temple-tileset.png-50f1d70b3ee55d4dee6ba1f76b41780a.stex" ]
+source_file="res://assets/RottenPixels/four-seasons-tileset.png"
+dest_files=[ "res://.import/four-seasons-tileset.png-fdc860a935e73207c8cbf83ad7e254d9.stex" ]
 
 [params]
 

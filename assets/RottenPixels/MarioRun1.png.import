@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset.png-f0f4fd7a6975886e0e056247b0196766.stex"
+path="res://.import/MarioRun1.png-ce261e0d56c2a488964ab6d3aaeb2631.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RottenPixels/tileset.png"
-dest_files=[ "res://.import/tileset.png-f0f4fd7a6975886e0e056247b0196766.stex" ]
+source_file="res://assets/RottenPixels/MarioRun1.png"
+dest_files=[ "res://.import/MarioRun1.png-ce261e0d56c2a488964ab6d3aaeb2631.stex" ]
 
 [params]
 
