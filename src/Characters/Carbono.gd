@@ -73,10 +73,12 @@ func hor_movement(dir):
 
 
 func activate_special():
-	
-	
-	if Input.is_action_just_pressed("special") and can_switch:
-		emit_signal("interact")
+	if active:
+		if Input.is_action_just_pressed("special"):
+			if can_switch:
+				emit_signal("interact")
+			else:
+				$AnimatedSprite.play("punch")
 
 
 func _on_Switch_body_entered(body):
