@@ -1,3 +1,4 @@
+class_name Hidriogio
 extends KinematicBody2D
 
 
@@ -15,23 +16,25 @@ var animation = ""
 # Jump
 export var fall_gravity_scale = 100.0
 export var low_jump_gravity_scale = 200.0
-export var jump_power := 600.0
+export var jump_power := 400.0
 var jump_released = false
 # Physics
-export var gravity_scale = 100.0
+export var gravity_scale = 90.0
 var earth_gravity = 9.807
 var on_floor
 # Special variables
 var inflated = false
 var extra_jump_available = true
+var in_wind_current = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	in_wind_current = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(in_wind_current)
 	var dir = 0
 	activate_special()
 	if active:
@@ -42,8 +45,11 @@ func _process(delta):
 	
 	if not inflated:
 		velocity += Vector2.DOWN * gravity_scale * earth_gravity * delta
-#	else:
-#		animation = "inflated"
+	elif inflated:
+		if in_wind_current:
+			velocity.y = -gravity_scale
+		else:
+			velocity.y = 0
 	
 	if on_floor:
 		extra_jump_available = true
@@ -109,3 +115,14 @@ func _on_Switch_body_entered(body):
 
 func _on_Switch_body_exited(body):
 	can_switch = false
+
+
+func _on_WindCurrent_body_entered(_body):
+	in_wind_current = true
+
+
+func _on_WindCurrent_body_exited(_body):
+	in_wind_current = false
+
+
+

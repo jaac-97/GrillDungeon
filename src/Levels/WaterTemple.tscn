@@ -28,6 +28,6 @@ tile_data = PoolIntArray( 327741, 10, 0, 524337, 10, 0, 589875, 536870915, 19661
 [node name="OxiChef" parent="." instance=ExtResource( 2 )]
 position = Vector2( 94.3355, 216.863 )
 
-[node name="Camera" type="Camera2D" parent="OxiChef"]
+[node name="Camera2D" type="Camera2D" parent="OxiChef"]
 current = true
 process_mode = 0
