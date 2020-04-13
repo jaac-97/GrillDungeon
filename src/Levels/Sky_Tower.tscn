@@ -48,43 +48,43 @@ extents = Vector2( 202.673, 18.1079 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 74.4254, 16.9182 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 31.0305, 17.0581 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 43.6976, 17.9667 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 32.0925, 17.2017 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 13.071, 14.3667 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 29.85, 16.3879 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 111.26, 14.3899 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 30.0988, 18.1888 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 34.8838, 16.1336 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 17.3987, 12.3925 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 63.5025, 19.0869 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 16.7147, 18.4464 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 16.5771, 18.1501 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 16.7957, 17.7184 )
 
 [sub_resource type="RectangleShape2D" id=28]
@@ -127,7 +127,7 @@ shape = SubResource( 1 )
 position = Vector2( -7.94971, 33.1255 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 11
+frame = 5
 playing = true
 
 [node name="WindCurrent2" type="Area2D" parent="WindCurrents"]
@@ -143,7 +143,7 @@ shape = SubResource( 2 )
 position = Vector2( -6.08228, 4.64197 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 11
+frame = 5
 playing = true
 
 [node name="WindCurrent3" type="Area2D" parent="WindCurrents"]
@@ -153,13 +153,14 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WindCurrents/WindCurrent3"]
+position = Vector2( 9, 0 )
 shape = SubResource( 3 )
 
 [node name="Wind3" parent="WindCurrents/WindCurrent3" instance=ExtResource( 5 )]
 position = Vector2( -2.10234, 2.63544 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 10
+frame = 4
 playing = true
 
 [node name="WindCurrent4" type="Area2D" parent="WindCurrents"]
@@ -175,7 +176,7 @@ shape = SubResource( 4 )
 position = Vector2( -0.691101, -0.889557 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 9
+frame = 3
 playing = true
 
 [node name="WindCurrent5" type="Area2D" parent="WindCurrents"]
@@ -195,7 +196,7 @@ __meta__ = {
 position = Vector2( -1.78137, -2.59167 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 9
+frame = 3
 playing = true
 
 [node name="WindCurrent6" type="Area2D" parent="WindCurrents"]
@@ -211,7 +212,7 @@ shape = SubResource( 6 )
 position = Vector2( 0.941162, 0.815918 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 8
+frame = 2
 playing = true
 
 [node name="WindCurrent7" type="Area2D" parent="WindCurrents"]
@@ -227,7 +228,7 @@ shape = SubResource( 7 )
 position = Vector2( -8.42883, -5.27759 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 7
+frame = 1
 playing = true
 
 [node name="WindCurrent8" type="Area2D" parent="WindCurrents"]
@@ -243,7 +244,6 @@ shape = SubResource( 8 )
 position = Vector2( -7.71143, 77.9463 )
 rotation = -1.5708
 scale = Vector2( 0.872331, 0.327139 )
-frame = 6
 playing = true
 
 [node name="WindCurrent9" type="Area2D" parent="WindCurrents"]
@@ -259,7 +259,7 @@ shape = SubResource( 9 )
 position = Vector2( -4.48206, -1.13989 )
 rotation = -1.5708
 scale = Vector2( 0.386495, 0.327139 )
-frame = 5
+frame = 15
 playing = true
 
 [node name="WindCurrent10" type="Area2D" parent="WindCurrents"]
@@ -275,7 +275,7 @@ shape = SubResource( 10 )
 position = Vector2( -3.95813, 0.158203 )
 rotation = -1.5708
 scale = Vector2( 0.54844, 0.327139 )
-frame = 5
+frame = 15
 playing = true
 
 [node name="Hidriogio" parent="." instance=ExtResource( 3 )]
@@ -330,7 +330,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes5"]
-shape = SubResource( 24 )
+shape = SubResource( 15 )
 
 [node name="Spikes6" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 577.08, -1616.54 )
@@ -339,7 +339,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes6"]
-shape = SubResource( 25 )
+shape = SubResource( 16 )
 
 [node name="Spikes7" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 862.972, -1618.17 )
@@ -348,7 +348,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes7"]
-shape = SubResource( 25 )
+shape = SubResource( 16 )
 
 [node name="Spikes8" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 1473.33, -2401.27 )
@@ -366,7 +366,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes9"]
-shape = SubResource( 26 )
+shape = SubResource( 17 )
 
 [node name="Spikes10" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 1183.51, -2689.3 )
@@ -375,7 +375,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes10"]
-shape = SubResource( 26 )
+shape = SubResource( 17 )
 
 [node name="Spikes11" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 911.893, -2627.56 )
@@ -384,7 +384,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes11"]
-shape = SubResource( 27 )
+shape = SubResource( 18 )
 
 [node name="Spikes13" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 1232.22, -2657.5 )
@@ -393,7 +393,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes13"]
-shape = SubResource( 27 )
+shape = SubResource( 18 )
 
 [node name="Spikes14" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 1263.95, -2626.96 )
@@ -402,7 +402,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes14"]
-shape = SubResource( 27 )
+shape = SubResource( 18 )
 
 [node name="Spikes12" type="Area2D" parent="DeathZonesU"]
 position = Vector2( 943.832, -2659.63 )
@@ -411,7 +411,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes12"]
-shape = SubResource( 27 )
+shape = SubResource( 18 )
 
 [node name="DeathZonesD" type="Node2D" parent="."]
 visible = false
@@ -423,7 +423,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes"]
-shape = SubResource( 15 )
+shape = SubResource( 19 )
 
 [node name="Spikes2" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 452.865, 627.17 )
@@ -432,7 +432,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes2"]
-shape = SubResource( 16 )
+shape = SubResource( 20 )
 
 [node name="Spikes3" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 366.789, 463.719 )
@@ -441,7 +441,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes3"]
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
 [node name="Spikes4" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 295.856, 401.72 )
@@ -450,7 +450,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes4"]
-shape = SubResource( 18 )
+shape = SubResource( 22 )
 
 [node name="Spikes5" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 359.897, 569.747 )
@@ -459,7 +459,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes5"]
-shape = SubResource( 19 )
+shape = SubResource( 23 )
 
 [node name="Spikes6" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 671.783, 461.626 )
@@ -468,7 +468,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes6"]
-shape = SubResource( 20 )
+shape = SubResource( 24 )
 
 [node name="Spikes7" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 879.63, 494.729 )
@@ -477,7 +477,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes7"]
-shape = SubResource( 21 )
+shape = SubResource( 25 )
 
 [node name="Spikes8" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 976.376, 622.171 )
@@ -486,7 +486,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes8"]
-shape = SubResource( 22 )
+shape = SubResource( 26 )
 
 [node name="Spikes9" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 847.989, 752.909 )
@@ -495,7 +495,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes9"]
-shape = SubResource( 23 )
+shape = SubResource( 27 )
 
 [node name="Falling" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 2236.61, 1431.42 )
