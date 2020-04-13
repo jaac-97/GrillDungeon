@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/RottenPixels.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Levels/Sky_Tower.gd" type="Script" id=2]
@@ -36,30 +36,54 @@ extents = Vector2( 32.8337, 36.3203 )
 extents = Vector2( 32.593, 114.849 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 29.85, 16.3879 )
+extents = Vector2( 122.612, 17.1044 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 111.26, 14.3899 )
+extents = Vector2( 92.3844, 15.1913 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 30.0988, 18.1888 )
+extents = Vector2( 202.673, 18.1079 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 34.8838, 16.1336 )
+extents = Vector2( 74.4254, 16.9182 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 31.0305, 17.0581 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 43.6976, 17.9667 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 32.0925, 17.2017 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 13.071, 14.3667 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 17.3987, 12.3925 )
+extents = Vector2( 29.85, 16.3879 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 63.5025, 19.0869 )
+extents = Vector2( 111.26, 14.3899 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 16.7147, 18.4464 )
+extents = Vector2( 30.0988, 18.1888 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 16.5771, 18.1501 )
+extents = Vector2( 34.8838, 16.1336 )
 
 [sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 17.3987, 12.3925 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 63.5025, 19.0869 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 16.7147, 18.4464 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 16.5771, 18.1501 )
+
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 16.7957, 17.7184 )
 
 [node name="Sky_Tower" type="Node2D"]
@@ -186,90 +210,219 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WindCurrents/WindCurrent10"]
 shape = SubResource( 10 )
 
-[node name="DeathZones" type="Node2D" parent="."]
+[node name="DeathZonesU" type="Node2D" parent="."]
 
-[node name="Spikes" type="Area2D" parent="DeathZones"]
+[node name="Spikes" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 768.352, -1086.79 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes"]
+shape = SubResource( 11 )
+
+[node name="Spikes2" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 993.118, -1121.32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes2"]
+shape = SubResource( 12 )
+
+[node name="Spikes3" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 1298.35, -1150.58 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes3"]
+shape = SubResource( 13 )
+
+[node name="Spikes4" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 256.575, -1582.08 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes4"]
+shape = SubResource( 14 )
+
+[node name="Spikes5" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 33.481, -1152 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes5"]
+shape = SubResource( 24 )
+
+[node name="Spikes6" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 577.08, -1616.54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes6"]
+shape = SubResource( 25 )
+
+[node name="Spikes7" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 862.972, -1618.17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes7"]
+shape = SubResource( 25 )
+
+[node name="Spikes8" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 1473.33, -2401.27 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes8"]
+shape = SubResource( 11 )
+
+[node name="Spikes9" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 991.607, -2687.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes9"]
+shape = SubResource( 26 )
+
+[node name="Spikes10" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 1183.51, -2689.3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes10"]
+shape = SubResource( 26 )
+
+[node name="Spikes11" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 911.893, -2627.56 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes11"]
+shape = SubResource( 27 )
+
+[node name="Spikes13" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 1232.22, -2657.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes13"]
+shape = SubResource( 27 )
+
+[node name="Spikes14" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 1263.95, -2626.96 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes14"]
+shape = SubResource( 27 )
+
+[node name="Spikes12" type="Area2D" parent="DeathZonesU"]
+position = Vector2( 943.832, -2659.63 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesU/Spikes12"]
+shape = SubResource( 27 )
+
+[node name="DeathZonesD" type="Node2D" parent="."]
+
+[node name="Spikes" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 799.589, 880.561 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes"]
-shape = SubResource( 11 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes"]
+shape = SubResource( 15 )
 
-[node name="Spikes2" type="Area2D" parent="DeathZones"]
+[node name="Spikes2" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 452.865, 627.17 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes2"]
-shape = SubResource( 12 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes2"]
+shape = SubResource( 16 )
 
-[node name="Spikes3" type="Area2D" parent="DeathZones"]
+[node name="Spikes3" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 366.789, 463.719 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes3"]
-shape = SubResource( 13 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes3"]
+shape = SubResource( 17 )
 
-[node name="Spikes4" type="Area2D" parent="DeathZones"]
+[node name="Spikes4" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 295.856, 401.72 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes4"]
-shape = SubResource( 14 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes4"]
+shape = SubResource( 18 )
 
-[node name="Spikes5" type="Area2D" parent="DeathZones"]
+[node name="Spikes5" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 359.897, 569.747 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes5"]
-shape = SubResource( 15 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes5"]
+shape = SubResource( 19 )
 
-[node name="Spikes6" type="Area2D" parent="DeathZones"]
+[node name="Spikes6" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 671.783, 461.626 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes6"]
-shape = SubResource( 16 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes6"]
+shape = SubResource( 20 )
 
-[node name="Spikes7" type="Area2D" parent="DeathZones"]
+[node name="Spikes7" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 879.63, 494.729 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes7"]
-shape = SubResource( 17 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes7"]
+shape = SubResource( 21 )
 
-[node name="Spikes8" type="Area2D" parent="DeathZones"]
+[node name="Spikes8" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 976.376, 622.171 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes8"]
-shape = SubResource( 18 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes8"]
+shape = SubResource( 22 )
 
-[node name="Spikes9" type="Area2D" parent="DeathZones"]
+[node name="Spikes9" type="Area2D" parent="DeathZonesD"]
 position = Vector2( 847.989, 752.909 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes9"]
-shape = SubResource( 19 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes9"]
+shape = SubResource( 23 )
 
 [node name="Screens" type="Node2D" parent="."]
+position = Vector2( -58.106, 2.50385 )
 
 [node name="DeathScreen" parent="Screens" instance=ExtResource( 4 )]
 [connection signal="dead" from="Hidriogio" to="." method="_on_Hidriogio_dead"]
@@ -293,12 +446,26 @@ shape = SubResource( 19 )
 [connection signal="body_shape_exited" from="WindCurrents/WindCurrent9" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
 [connection signal="body_shape_entered" from="WindCurrents/WindCurrent10" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
 [connection signal="body_shape_exited" from="WindCurrents/WindCurrent10" to="." method="_on_WindCurrent_body_shape_exited"]
-[connection signal="area_entered" from="DeathZones/Spikes" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes2" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes3" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes4" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes5" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes6" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes7" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes8" to="Hidriogio" method="_on_Spikes_area_entered"]
-[connection signal="area_entered" from="DeathZones/Spikes9" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes2" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes3" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes4" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes5" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes6" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes7" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes8" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes9" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes10" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes11" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes13" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes14" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesU/Spikes12" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes2" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes3" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes4" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes5" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes6" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes7" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes8" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Spikes9" to="Hidriogio" method="_on_Spikes_area_entered"]
