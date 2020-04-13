@@ -31,3 +31,7 @@ func _on_Hidriogio_dead():
 
 func _on_Spikes_area_entered(area):
 	pass # Replace with function body.
+
+
+func _on_WindCurrent_area_exited(area):
+	pass # Replace with function body.
