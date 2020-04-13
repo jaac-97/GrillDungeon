@@ -29,9 +29,5 @@ func _on_Hidriogio_dead():
 	$Screens/DeathScreen.show_death_screen()
 
 
-func _on_Spikes_area_entered(area):
-	pass # Replace with function body.
-
-
-func _on_WindCurrent_area_exited(area):
-	pass # Replace with function body.
+func _on_DeathScreen_restart_scene():
+	get_tree().reload_current_scene()

@@ -127,7 +127,7 @@ shape = SubResource( 1 )
 position = Vector2( -7.94971, 33.1255 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="WindCurrent2" type="Area2D" parent="WindCurrents"]
@@ -143,7 +143,7 @@ shape = SubResource( 2 )
 position = Vector2( -6.08228, 4.64197 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="WindCurrent3" type="Area2D" parent="WindCurrents"]
@@ -160,7 +160,7 @@ shape = SubResource( 3 )
 position = Vector2( -2.10234, 2.63544 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="WindCurrent4" type="Area2D" parent="WindCurrents"]
@@ -176,7 +176,7 @@ shape = SubResource( 4 )
 position = Vector2( -0.691101, -0.889557 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="WindCurrent5" type="Area2D" parent="WindCurrents"]
@@ -196,7 +196,7 @@ __meta__ = {
 position = Vector2( -1.78137, -2.59167 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="WindCurrent6" type="Area2D" parent="WindCurrents"]
@@ -212,7 +212,6 @@ shape = SubResource( 6 )
 position = Vector2( 0.941162, 0.815918 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 2
 playing = true
 
 [node name="WindCurrent7" type="Area2D" parent="WindCurrents"]
@@ -228,7 +227,7 @@ shape = SubResource( 7 )
 position = Vector2( -8.42883, -5.27759 )
 rotation = -1.5708
 scale = Vector2( 0.611811, 0.327139 )
-frame = 1
+frame = 15
 playing = true
 
 [node name="WindCurrent8" type="Area2D" parent="WindCurrents"]
@@ -244,6 +243,7 @@ shape = SubResource( 8 )
 position = Vector2( -7.71143, 77.9463 )
 rotation = -1.5708
 scale = Vector2( 0.872331, 0.327139 )
+frame = 14
 playing = true
 
 [node name="WindCurrent9" type="Area2D" parent="WindCurrents"]
@@ -259,7 +259,7 @@ shape = SubResource( 9 )
 position = Vector2( -4.48206, -1.13989 )
 rotation = -1.5708
 scale = Vector2( 0.386495, 0.327139 )
-frame = 15
+frame = 13
 playing = true
 
 [node name="WindCurrent10" type="Area2D" parent="WindCurrents"]
@@ -275,7 +275,7 @@ shape = SubResource( 10 )
 position = Vector2( -3.95813, 0.158203 )
 rotation = -1.5708
 scale = Vector2( 0.54844, 0.327139 )
-frame = 15
+frame = 13
 playing = true
 
 [node name="Hidriogio" parent="." instance=ExtResource( 3 )]
@@ -566,3 +566,4 @@ position = Vector2( -58.106, 2.50385 )
 [connection signal="area_entered" from="DeathZonesD/Spikes9" to="Hidriogio" method="_on_Spikes_area_entered"]
 [connection signal="area_entered" from="DeathZonesD/Falling" to="Hidriogio" method="_on_Falling_area_entered"]
 [connection signal="area_entered" from="DeathZonesD/Falling2" to="Hidriogio" method="_on_Falling_area_entered"]
+[connection signal="restart_scene" from="Screens/DeathScreen" to="." method="_on_DeathScreen_restart_scene"]
