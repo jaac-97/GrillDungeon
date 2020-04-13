@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/RottenPixels.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Levels/Sky_Tower.gd" type="Script" id=2]
 [ext_resource path="res://src/Characters/Hidriogio.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Layers/DeathScreen.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.1065, 166.749 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 33.5229, 111.27 )
+extents = Vector2( 35.7321, 106.898 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 25.7016, 135.139 )
@@ -33,6 +34,33 @@ extents = Vector2( 32.8337, 36.3203 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 32.593, 114.849 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 29.85, 16.3879 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 111.26, 14.3899 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 30.0988, 18.1888 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 34.8838, 16.1336 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 17.3987, 12.3925 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 63.5025, 19.0869 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 16.7147, 18.4464 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 16.5771, 18.1501 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 16.7957, 17.7184 )
 
 [node name="Sky_Tower" type="Node2D"]
 script = ExtResource( 2 )
@@ -74,7 +102,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="WindCurrent2" type="Area2D" parent="WindCurrents"]
-position = Vector2( 352.897, 750.835 )
+position = Vector2( 351.268, 757.464 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -157,23 +185,120 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WindCurrents/WindCurrent10"]
 shape = SubResource( 10 )
-[connection signal="body_entered" from="WindCurrents/WindCurrent" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent2" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent2" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent3" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent3" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent4" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent4" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent5" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent5" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent6" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent6" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent7" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent7" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent8" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent8" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent9" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent9" to="Hidriogio" method="_on_WindCurrent_body_exited"]
-[connection signal="body_entered" from="WindCurrents/WindCurrent10" to="Hidriogio" method="_on_WindCurrent_body_entered"]
-[connection signal="body_exited" from="WindCurrents/WindCurrent10" to="Hidriogio" method="_on_WindCurrent_body_exited"]
+
+[node name="DeathZones" type="Node2D" parent="."]
+
+[node name="Spikes" type="Area2D" parent="DeathZones"]
+position = Vector2( 799.589, 880.561 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes"]
+shape = SubResource( 11 )
+
+[node name="Spikes2" type="Area2D" parent="DeathZones"]
+position = Vector2( 452.865, 627.17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes2"]
+shape = SubResource( 12 )
+
+[node name="Spikes3" type="Area2D" parent="DeathZones"]
+position = Vector2( 366.789, 463.719 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes3"]
+shape = SubResource( 13 )
+
+[node name="Spikes4" type="Area2D" parent="DeathZones"]
+position = Vector2( 295.856, 401.72 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes4"]
+shape = SubResource( 14 )
+
+[node name="Spikes5" type="Area2D" parent="DeathZones"]
+position = Vector2( 359.897, 569.747 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes5"]
+shape = SubResource( 15 )
+
+[node name="Spikes6" type="Area2D" parent="DeathZones"]
+position = Vector2( 671.783, 461.626 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes6"]
+shape = SubResource( 16 )
+
+[node name="Spikes7" type="Area2D" parent="DeathZones"]
+position = Vector2( 879.63, 494.729 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes7"]
+shape = SubResource( 17 )
+
+[node name="Spikes8" type="Area2D" parent="DeathZones"]
+position = Vector2( 976.376, 622.171 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes8"]
+shape = SubResource( 18 )
+
+[node name="Spikes9" type="Area2D" parent="DeathZones"]
+position = Vector2( 847.989, 752.909 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZones/Spikes9"]
+shape = SubResource( 19 )
+
+[node name="Screens" type="Node2D" parent="."]
+
+[node name="DeathScreen" parent="Screens" instance=ExtResource( 4 )]
+[connection signal="dead" from="Hidriogio" to="." method="_on_Hidriogio_dead"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent2" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent2" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent3" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent3" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent4" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent4" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent5" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent5" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent6" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent6" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent7" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent7" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent8" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent8" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent9" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent9" to="Hidriogio" method="_on_WindCurrent_body_shape_exited"]
+[connection signal="body_shape_entered" from="WindCurrents/WindCurrent10" to="Hidriogio" method="_on_WindCurrent_body_shape_entered"]
+[connection signal="body_shape_exited" from="WindCurrents/WindCurrent10" to="." method="_on_WindCurrent_body_shape_exited"]
+[connection signal="area_entered" from="DeathZones/Spikes" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes2" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes3" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes4" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes5" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes6" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes7" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes8" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZones/Spikes9" to="Hidriogio" method="_on_Spikes_area_entered"]

@@ -22,3 +22,12 @@ func _ready():
 
 
 
+
+
+func _on_Hidriogio_dead():
+	print("dead")
+	$Screens/DeathScreen.show_death_screen()
+
+
+func _on_Spikes_area_entered(area):
+	pass # Replace with function body.

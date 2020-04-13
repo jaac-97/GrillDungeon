@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 
 signal interact
+signal dead
 
 onready var can_switch = false
 onready var active = false
@@ -34,7 +35,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(in_wind_current)
 	var dir = 0
 	activate_special()
 	if active:
@@ -117,12 +117,13 @@ func _on_Switch_body_exited(body):
 	can_switch = false
 
 
-func _on_WindCurrent_body_entered(_body):
+func _on_WindCurrent_body_shape_entered(body_id, body, body_shape, area_shape):
 	in_wind_current = true
 
 
-func _on_WindCurrent_body_exited(_body):
+func _on_WindCurrent_body_shape_exited(body_id, body, body_shape, area_shape):
 	in_wind_current = false
 
 
-
+func _on_Spikes_area_entered(area):
+	emit_signal("dead")
