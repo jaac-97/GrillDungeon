@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 signal interact
+signal move_destroy
 
 onready var active = false
 onready var can_switch = false
@@ -20,6 +21,8 @@ var jump_released = false
 # Physics
 export var gravity_scale = 100.0
 var earth_gravity = 9.807
+# Special Variables
+var is_punching = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -73,8 +76,11 @@ func hor_movement(dir):
 
 
 func activate_special():
-	
-	
+	if Input.is_action_just_pressed("special"):
+		$AnimatedSprite.play("prePunch")
+		$Punch.start()
+		is_punching = true
+			
 	if Input.is_action_just_pressed("special") and can_switch:
 		emit_signal("interact")
 
@@ -85,3 +91,9 @@ func _on_Switch_body_entered(body):
 
 func _on_Switch_body_exited(body):
 	can_switch = false
+
+
+func _on_Punch_timeout():
+	is_punching = false
+	$AnimatedSprite.play("punch")
+	emit_signal("move_destroy")
