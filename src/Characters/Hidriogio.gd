@@ -127,3 +127,7 @@ func _on_WindCurrent_body_shape_exited(body_id, body, body_shape, area_shape):
 
 func _on_Spikes_area_entered(area):
 	emit_signal("dead")
+
+
+func _on_Falling_area_entered(area):
+	emit_signal("dead")

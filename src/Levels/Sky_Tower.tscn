@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/RottenPixels.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Levels/Sky_Tower.gd" type="Script" id=2]
@@ -85,6 +85,9 @@ extents = Vector2( 16.5771, 18.1501 )
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 16.7957, 17.7184 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 942.304, 40.158 )
 
 [node name="Sky_Tower" type="Node2D"]
 script = ExtResource( 2 )
@@ -421,6 +424,24 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Spikes9"]
 shape = SubResource( 23 )
 
+[node name="Falling" type="Area2D" parent="DeathZonesD"]
+position = Vector2( 2236.61, 1431.42 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Falling"]
+shape = SubResource( 28 )
+
+[node name="Falling2" type="Area2D" parent="DeathZonesD"]
+position = Vector2( -724.415, 1426.99 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZonesD/Falling2"]
+shape = SubResource( 28 )
+
 [node name="Screens" type="Node2D" parent="."]
 position = Vector2( -58.106, 2.50385 )
 
@@ -469,3 +490,5 @@ position = Vector2( -58.106, 2.50385 )
 [connection signal="area_entered" from="DeathZonesD/Spikes7" to="Hidriogio" method="_on_Spikes_area_entered"]
 [connection signal="area_entered" from="DeathZonesD/Spikes8" to="Hidriogio" method="_on_Spikes_area_entered"]
 [connection signal="area_entered" from="DeathZonesD/Spikes9" to="Hidriogio" method="_on_Spikes_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Falling" to="Hidriogio" method="_on_Falling_area_entered"]
+[connection signal="area_entered" from="DeathZonesD/Falling2" to="Hidriogio" method="_on_Falling_area_entered"]
