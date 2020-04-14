@@ -139,3 +139,7 @@ func _on_WindCurrent_area_entered(area):
 
 func _on_WindCurrent_area_exited(area):
 	in_wind_current = false
+
+
+func _on_Bullet_hit():
+	emit_signal("dead")
