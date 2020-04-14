@@ -30,4 +30,8 @@ func _on_Hidriogio_dead():
 
 
 func _on_DeathScreen_restart_scene():
-	get_tree().reload_current_scene()
+	$Hidriogio.position = $Hidriogio.init_pos
+	$Screens/DeathScreen/RestartButton.hide()
+	yield(get_tree().create_timer(1),"timeout")
+	$Screens/DeathScreen/ColorRect.hide()
+	$Screens/DeathScreen/Label.hide()
