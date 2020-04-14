@@ -1,9 +1,12 @@
+class_name Carbono
 extends KinematicBody2D
 
 
 signal interact
 signal move_destroy
+signal dead
 
+onready var init_pos = position
 onready var active = false
 onready var can_switch = false
 # Declare member variables here. Examples:
@@ -55,7 +58,8 @@ func _process(delta):
 	
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
-	$AnimatedSprite.play(animation)
+	if not is_punching:
+		$AnimatedSprite.play(animation)
 
 
 func hor_movement(dir):

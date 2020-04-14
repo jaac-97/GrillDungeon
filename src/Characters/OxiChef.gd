@@ -3,8 +3,10 @@ extends KinematicBody2D
 
 
 signal interact
+signal dead
 
 onready var active = true
+onready var init_pos = position
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
 const WALK_SPEED = 130
