@@ -70,3 +70,7 @@ func hor_movement(dir):
 	
 	animation = movement if dir != 0 else "stand"
 
+
+
+func _on_Spikes_area_entered(area):
+	emit_signal("dead")
