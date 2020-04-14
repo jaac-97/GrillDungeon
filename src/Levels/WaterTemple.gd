@@ -12,10 +12,10 @@ func _on_OxiChef_dead():
 
 func _on_DeathScreen_restart_scene():
 	$OxiChef.position = $OxiChef.init_pos
-	$Screens/DeathScreen/RestartButton.hide()
+	$DeathScreen/RestartButton.hide()
 	yield(get_tree().create_timer(1),"timeout")
-	$Screens/DeathScreen/ColorRect.hide()
-	$Screens/DeathScreen/Label.hide()
+	$DeathScreen/ColorRect.hide()
+	$DeathScreen/Label.hide()
 
 
 func activate():
@@ -28,3 +28,7 @@ func deactivate():
 	hide()
 	$OxiChef.active = false
 	$OxiChef/Camera2D.current = false
+
+
+func _on_Spikes_area_entered(area):
+	pass # Replace with function body.
