@@ -7,6 +7,7 @@ signal dead
 
 onready var can_switch = false
 onready var active = false
+onready var init_pos = position
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
 const WALK_SPEED = 100
@@ -31,6 +32,7 @@ var in_wind_current = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	in_wind_current = false
+	print(init_pos)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -117,19 +119,15 @@ func _on_Switch_body_exited(body):
 	can_switch = false
 
 
-func _on_WindCurrent_body_shape_entered(body_id, body, body_shape, area_shape):
-	in_wind_current = true
-
-
-func _on_WindCurrent_body_shape_exited(body_id, body, body_shape, area_shape):
-	in_wind_current = false
-
-
 func _on_Spikes_area_entered(area):
 	emit_signal("dead")
 
 
 func _on_Falling_area_entered(area):
+	emit_signal("dead")
+
+
+func _on_Bullet_hit():
 	emit_signal("dead")
 
 
@@ -139,7 +137,3 @@ func _on_WindCurrent_area_entered(area):
 
 func _on_WindCurrent_area_exited(area):
 	in_wind_current = false
-
-
-func _on_Bullet_hit():
-	emit_signal("dead")
