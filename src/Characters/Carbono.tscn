@@ -11,20 +11,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "run",
-"speed": 7.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
@@ -36,17 +31,23 @@ animations = [ {
 "name": "prePunch",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "Punch",
+"name": "stand",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "run",
+"speed": 7.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 13.787
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.13937
+height = 13.6339
 
 [node name="Carbono" type="KinematicBody2D"]
-position = Vector2( 147.469, 117.46 )
+position = Vector2( 147.051, 118.296 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -54,11 +55,18 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Punch"
+animation = "punch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.5, 2 )
 shape = SubResource( 2 )
 
 [node name="Punch" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.5, 2 )
+shape = SubResource( 2 )
 [connection signal="timeout" from="Punch" to="." method="_on_Punch_timeout"]
