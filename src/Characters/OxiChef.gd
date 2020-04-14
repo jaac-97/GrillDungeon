@@ -3,8 +3,10 @@ extends KinematicBody2D
 
 
 signal interact
+signal dead
 
 onready var active = true
+onready var init_pos = position
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
 const WALK_SPEED = 130
@@ -68,3 +70,7 @@ func hor_movement(dir):
 	
 	animation = movement if dir != 0 else "stand"
 
+
+
+func _on_Spikes_area_entered(area):
+	emit_signal("dead")

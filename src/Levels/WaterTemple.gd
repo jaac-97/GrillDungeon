@@ -1,16 +1,34 @@
 extends Node2D
 
 
-const LIMIT_LEFT = -315
-const LIMIT_TOP = -250
-const LIMIT_RIGHT = 955
-const LIMIT_BOTTOM = 690
+func _ready():
+	pass
 
-#func _ready():
-#	for child in get_children():
-#		if child is Player:
-#			var camera = child.get_node("Camera")
-#			camera.limit_left = LIMIT_LEFT
-#			camera.limit_top = LIMIT_TOP
-#			camera.limit_right = LIMIT_RIGHT
-#			camera.limit_bottom = LIMIT_BOTTOM
+
+func _on_OxiChef_dead():
+	print("dead")
+	$DeathScreen.show_death_screen()
+
+
+func _on_DeathScreen_restart_scene():
+	$OxiChef.position = $OxiChef.init_pos
+	$DeathScreen/RestartButton.hide()
+	yield(get_tree().create_timer(1),"timeout")
+	$DeathScreen/ColorRect.hide()
+	$DeathScreen/Label.hide()
+
+
+func activate():
+	show()
+	$OxiChef.active = true
+	$OxiChef/Camera2D.current = true
+
+
+func deactivate():
+	hide()
+	$OxiChef.active = false
+	$OxiChef/Camera2D.current = false
+
+
+func _on_Spikes_area_entered(area):
+	pass # Replace with function body.
