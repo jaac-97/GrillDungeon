@@ -6,6 +6,7 @@ signal interact
 signal dead
 
 onready var active = true
+onready var can_switch = false
 onready var init_pos = position
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
@@ -53,6 +54,8 @@ func _process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	$AnimatedSprite.play(animation)
 
+	if can_switch and Input.is_action_just_pressed("special"):
+		emit_signal("interact")
 
 func hor_movement(dir):
 	if Input.is_action_pressed("ui_right"):
@@ -70,7 +73,11 @@ func hor_movement(dir):
 	
 	animation = movement if dir != 0 else "stand"
 
+func _on_Switch_body_entered(body):
+	can_switch = true
 
+func _on_Switch_body_exited(body):
+	can_switch = false
 
 func _on_Spikes_area_entered(area):
 	emit_signal("dead")
