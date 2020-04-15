@@ -1,6 +1,7 @@
 extends Node2D
 
 export (PackedScene) var bullet
+signal SkyTower_finished
 
 func _ready():
 	$UpperCannon.start()
@@ -138,3 +139,7 @@ func _on_TTop_timeout():
 	bullet2.speed = 300
 	bullet1.position = $CannonsTop/Top1.position + Vector2(-20, -50)
 	bullet2.position = $CannonsTop/Top2.position + Vector2(-20, -50)
+
+
+func _on_Wind_Element_area_entered(area):
+	emit_signal("SkyTower_finished")

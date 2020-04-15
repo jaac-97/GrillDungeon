@@ -1,5 +1,6 @@
 extends Node2D
 
+signal WaterTemple_finished
 
 func _ready():
 	pass
@@ -29,6 +30,3 @@ func deactivate():
 	$OxiChef.active = false
 	$OxiChef/Camera2D.current = false
 
-
-func _on_Spikes_area_entered(area):
-	pass # Replace with function body.
