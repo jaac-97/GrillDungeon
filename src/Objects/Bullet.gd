@@ -27,4 +27,4 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Timer_timeout():
-	queue_free()
+	pass
