@@ -184,87 +184,30 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes6"]
 shape = SubResource( 2 )
 
-[node name="RockTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
-[node name="RockSpawn" type="Node2D" parent="."]
-
-[node name="RockPath" type="Path2D" parent="RockSpawn"]
+[node name="RockPath" type="Path2D" parent="."]
 curve = SubResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RockSpawnLocation" type="PathFollow2D" parent="RockSpawn/RockPath"]
-position = Vector2( 2136, 512 )
+[node name="RockSpawnLocation" type="PathFollow2D" parent="RockPath"]
+position = Vector2( 2128, 512 )
 rotate = false
 
-[node name="RockPath2" type="Path2D" parent="RockSpawn"]
+[node name="RockPath2" type="Path2D" parent="."]
 position = Vector2( 264, 0 )
 curve = SubResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RockSpawnLocation" type="PathFollow2D" parent="RockSpawn/RockPath2"]
+[node name="RockSpawnLocation" type="PathFollow2D" parent="RockPath2"]
 position = Vector2( 2136, 512 )
 rotate = false
 
-[node name="RockPath3" type="Path2D" parent="RockSpawn"]
-position = Vector2( 896, 792 )
-curve = SubResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RockSpawnLocation" type="PathFollow2D" parent="RockSpawn/RockPath3"]
-position = Vector2( 2136, 512 )
-rotate = false
-
-[node name="RockPath7" type="Path2D" parent="RockSpawn"]
-position = Vector2( 1968, 488 )
-curve = SubResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RockSpawnLocation" type="PathFollow2D" parent="RockSpawn/RockPath7"]
-position = Vector2( 2136, 512 )
-rotate = false
-
-[node name="RockPath4" type="Path2D" parent="RockSpawn"]
-position = Vector2( 1240, 792 )
-curve = SubResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RockSpawnLocation" type="PathFollow2D" parent="RockSpawn/RockPath4"]
-position = Vector2( 2136, 512 )
-rotate = false
-
-[node name="RockPath5" type="Path2D" parent="RockSpawn"]
-position = Vector2( 1288, 1264 )
-curve = SubResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RockSpawnLocation" type="PathFollow2D" parent="RockSpawn/RockPath5"]
-position = Vector2( 2136, 512 )
-rotate = false
-
-[node name="RockPath6" type="Path2D" parent="RockSpawn"]
-position = Vector2( 1672, 1360 )
-curve = SubResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RockSpawnLocation" type="PathFollow2D" parent="RockSpawn/RockPath6"]
-position = Vector2( 2136, 512 )
-rotate = false
+[node name="RockTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
 [connection signal="dead" from="Carbono" to="." method="_on_Carbono_dead"]
 [connection signal="restart_scene" from="DeathScreen" to="." method="_on_DeathScreen_restart_scene"]
 [connection signal="area_entered" from="Sand/Sand" to="Carbono" method="_on_Lava_area_entered"]
