@@ -7,7 +7,7 @@ signal move_destroy
 signal dead
 
 onready var init_pos = position
-onready var active = false
+onready var active = true
 onready var can_switch = false
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
@@ -35,7 +35,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var dir = 0
-
+	activate_special()
 	if active:
 		hor_movement(dir)
 	else:
@@ -54,7 +54,8 @@ func _process(delta):
 				velocity = Vector2.UP * jump_power
 				jump_released = false
 	else:
-		animation = "jump"
+		if not is_punching:
+			animation = "jump"
 	
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
@@ -76,15 +77,20 @@ func hor_movement(dir):
 	
 	velocity.x = dir * speed
 	
-	animation = movement if dir != 0 else "stand"
+	if not is_punching:
+		animation = movement if dir != 0 else "stand"
 
 
 func activate_special():
 	if Input.is_action_just_pressed("special"):
-		$AnimatedSprite.play("prePunch")
-		$Punch.start()
 		is_punching = true
-			
+		$AnimatedSprite.play("prePunch")
+		yield(get_tree().create_timer(0.2), "timeout")
+		$AnimatedSprite.play("punch")
+		emit_signal("move_destroy")
+		yield(get_tree().create_timer(0.5), "timeout")
+		is_punching = false
+		
 	if Input.is_action_just_pressed("special") and can_switch:
 		emit_signal("interact")
 
@@ -98,6 +104,15 @@ func _on_Switch_body_exited(body):
 
 
 func _on_Punch_timeout():
-	is_punching = false
 	$AnimatedSprite.play("punch")
 	emit_signal("move_destroy")
+	yield(get_tree().create_timer(0.5), "timeout")
+	is_punching = false
+
+
+func _on_Lava_area_entered(area):
+	emit_signal("dead")
+
+
+func _on_Spikes_area_entered(area):
+	emit_signal("dead")
