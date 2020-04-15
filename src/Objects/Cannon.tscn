@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/RottenPixels.tres" type="TileSet" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.4092
+
+[node name="Cannon" type="StaticBody2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 458754 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -17.797, 15.4756 )
+shape = SubResource( 1 )
