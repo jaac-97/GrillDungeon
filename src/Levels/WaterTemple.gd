@@ -30,3 +30,11 @@ func deactivate():
 	$OxiChef.active = false
 	$OxiChef/Camera2D.current = false
 
+
+
+func _on_Beer_area_entered(area):
+	$Beer.queue_free()
+
+
+func _on_WaterElement_area_entered(area):
+	emit_signal("finished")

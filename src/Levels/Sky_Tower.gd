@@ -143,3 +143,7 @@ func _on_TTop_timeout():
 
 func _on_Wind_Element_area_entered(area):
 	emit_signal("inished")
+
+
+func _on_Fan_area_entered(area):
+	$Fan.queue_free()
