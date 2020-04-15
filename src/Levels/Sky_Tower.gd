@@ -1,7 +1,7 @@
 extends Node2D
 
 export (PackedScene) var bullet
-signal SkyTower_finished
+signal finished
 
 func _ready():
 	$UpperCannon.start()
@@ -142,4 +142,4 @@ func _on_TTop_timeout():
 
 
 func _on_Wind_Element_area_entered(area):
-	emit_signal("SkyTower_finished")
+	emit_signal("inished")

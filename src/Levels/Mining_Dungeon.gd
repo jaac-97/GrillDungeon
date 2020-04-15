@@ -1,6 +1,6 @@
 extends Node2D
 
-signal MiningCave_finished
+signal finished
 
 func _ready():
 	pass
@@ -32,4 +32,4 @@ func deactivate():
 
 
 func _on_EarthElement_area_entered(area):
-	emit_signal("MiningCave_finished")
+	emit_signal("finished")

@@ -1,6 +1,6 @@
 extends Node2D
 
-signal WaterTemple_finished
+signal finished
 
 func _ready():
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/WaterTemple.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Layers/StartScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Layers/LoadingScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/Mining_Dungeon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Layers/EndScreen.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,4 +23,9 @@ position = Vector2( -3698.04, 1844.87 )
 [node name="StartScreen" parent="." instance=ExtResource( 4 )]
 
 [node name="LoadingScreen" parent="." instance=ExtResource( 5 )]
+
+[node name="EndScreen" parent="." instance=ExtResource( 7 )]
+[connection signal="finished" from="WaterTemple" to="." method="_on_WaterTemple_finished"]
+[connection signal="finished" from="Sky_Tower" to="." method="_on_Sky_Tower_finished"]
+[connection signal="finished" from="Mining_Cave" to="." method="_on_Mining_Cave_finished"]
 [connection signal="start_game" from="StartScreen" to="." method="_on_StartScreen_start_game"]
