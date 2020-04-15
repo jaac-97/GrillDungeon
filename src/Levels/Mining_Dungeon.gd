@@ -1,5 +1,6 @@
 extends Node2D
 
+signal finished
 
 func _ready():
 	pass
@@ -28,3 +29,11 @@ func deactivate():
 	hide()
 	$Carbono.active = false
 	$Carbono/Camera2D.current = false
+
+
+func _on_EarthElement_area_entered(area):
+	emit_signal("finished")
+
+
+func _on_Carbon_area_entered(area):
+	$Carbon.queue_free()

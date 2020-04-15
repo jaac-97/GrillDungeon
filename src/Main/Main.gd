@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$EndScreen.hide_end_screen()
 	$LoadingScreen.hide_loading_screen()
 	$WaterTemple.deactivate()
 	$Sky_Tower.deactivate()
@@ -38,7 +39,7 @@ func _on_WaterTemple_finished():
 	$LoadingScreen.hide_loading_screen()
 
 
-func _on_SkyTower_finished():
+func _on_Sky_Tower_finished():
 	$LoadingScreen.show_loading_screen()
 	$Sky_Tower.deactivate()
 	$Mining_Cave.activate()
@@ -46,5 +47,10 @@ func _on_SkyTower_finished():
 	$LoadingScreen.hide_loading_screen()
 
 
-func _on_MiningCave_finished():
-	pass
+func _on_Mining_Cave_finished():
+	$LoadingScreen.show_loading_screen()
+	$Mining_Cave.deactivate()
+	yield(get_tree().create_timer(1), "timeout")
+	$EndScreen.show_end_screen()
+	$LoadingScreen.hide_loading_screen()
+	yield(get_tree().create_timer(5), "timeout")

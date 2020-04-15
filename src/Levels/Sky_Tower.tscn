@@ -160,6 +160,7 @@ extents = Vector2( 75.9719, 15.7513 )
 
 [node name="Sky_Tower" type="Node2D"]
 script = ExtResource( 2 )
+bullet = ExtResource( 7 )
 
 [node name="Plataformas" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
