@@ -6,7 +6,7 @@ signal interact
 signal dead
 
 onready var can_switch = false
-onready var active = false
+onready var active = true
 onready var init_pos = position
 # Declare member variables here. Examples:
 const RUN_SPEED = 200
