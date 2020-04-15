@@ -1,8 +1,11 @@
 extends Node2D
 
+export (PackedScene) var Rock
 
 func _ready():
-	pass
+	Global.connect("rock_hit_player", self, "_on_Carbono_dead")
+	randomize()
+	$RockTimer.start()
 
 
 func _on_Carbono_dead():
@@ -28,3 +31,11 @@ func deactivate():
 	hide()
 	$Carbono.active = false
 	$Carbono/Camera2D.current = false
+
+
+func _on_RockTimer_timeout():
+	$RockPath/RockSpawnLocation.offset = randi()
+	var rock = Rock.instance()
+	add_child(rock)
+	rock.position = $RockPath/RockSpawnLocation.position
+	$DeathScreen.connect("restart_scene", rock, "_on_restart_game")

@@ -5,6 +5,7 @@ extends KinematicBody2D
 signal interact
 signal move_destroy
 signal dead
+signal hit
 
 onready var init_pos = position
 onready var active = true
@@ -116,3 +117,4 @@ func _on_Lava_area_entered(area):
 
 func _on_Spikes_area_entered(area):
 	emit_signal("dead")
+
