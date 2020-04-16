@@ -48,6 +48,8 @@ height = 13.6339
 
 [node name="Carbono" type="KinematicBody2D"]
 position = Vector2( 147.051, 118.296 )
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
