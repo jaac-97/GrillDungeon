@@ -5,6 +5,7 @@ extends Node2D
 func _ready():
 	$EndScreen.hide_end_screen()
 	$LoadingScreen.hide_loading_screen()
+	$FinalScreen/Sprite.hide()
 	$WaterTemple.deactivate()
 	$Sky_Tower.deactivate()
 	$Mining_Cave.deactivate()
@@ -54,3 +55,5 @@ func _on_Mining_Cave_finished():
 	$EndScreen.show_end_screen()
 	$LoadingScreen.hide_loading_screen()
 	yield(get_tree().create_timer(5), "timeout")
+	$FinalScreen/Sprite.show()
+	$EndScreen.hide_end_screen()

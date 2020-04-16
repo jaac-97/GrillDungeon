@@ -1,5 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/Final.png" type="Texture" id=1]
 
 [node name="FinalScreen" type="CanvasLayer"]
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 301.65, 200.792 )
+scale = Vector2( 2.22004, 2.49206 )
+texture = ExtResource( 1 )
