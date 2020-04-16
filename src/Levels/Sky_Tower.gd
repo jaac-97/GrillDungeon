@@ -5,6 +5,7 @@ signal finished
 
 func _ready():
 	$CannonsTimer.start()
+	$GotElement.hide_message()
 	Global.connect("bullet_hit", self, "_on_Hidriogio_dead")
 
 func _on_Hidriogio_dead():
@@ -33,6 +34,9 @@ func deactivate():
 
 
 func _on_Wind_Element_area_entered(area):
+	$GotElement.show_message()
+	yield(get_tree().create_timer(2), "timeout")
+	$GotElement.hide_message()
 	emit_signal("finished")
 
 
