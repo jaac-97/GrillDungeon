@@ -37,4 +37,7 @@ func _on_Beer_area_entered(area):
 
 
 func _on_WaterElement_area_entered(area):
+	$GotElement.show_message()
+	yield(get_tree().create_timer(2), "timeout")
+	$GotElement.hide_message()
 	emit_signal("finished")
