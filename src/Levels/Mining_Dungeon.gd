@@ -4,6 +4,8 @@ signal finished
 export (PackedScene) var rocks
 
 func _ready():
+	$Carbono.active = true
+	$Carbono/Camera2D.current = true
 	$RockSlides/Timer.start()
 	$RockSlides/Timer2.start()
 	$GotElement.hide_message()
@@ -23,23 +25,24 @@ func _on_DeathScreen_restart_scene():
 	$DeathScreen/ColorRect.hide()
 
 
-func activate():
-	show()
-	$Carbono.active = true
-	$Carbono/Camera2D.current = true
-
-
-func deactivate():
-	hide()
-	$Carbono.active = false
-	$Carbono/Camera2D.current = false
+#func activate():
+#	show()
+#	$Carbono.active = true
+#	$Carbono/Camera2D.current = true
+#
+#
+#func deactivate():
+#	hide()
+#	$Carbono.active = false
+#	$Carbono/Camera2D.current = false
 
 
 func _on_EarthElement_area_entered(area):
 	$GotElement.show_message()
 	yield(get_tree().create_timer(2), "timeout")
-	$GotElement.hide_message()
-	emit_signal("finished")
+	Global.goto_scene("res://src/Layers/EndScreen.tscn")
+#	$GotElement.hide_message()
+#	emit_signal("finished")
 
 
 func _on_Carbon_area_entered(area):

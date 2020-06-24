@@ -4,6 +4,8 @@ export (PackedScene) var bullet
 signal finished
 
 func _ready():
+	$Hidriogio.active = true
+	$Hidriogio/Camera2D.current = true
 	$CannonsTimer.start()
 	$GotElement.hide_message()
 	Global.connect("bullet_hit", self, "_on_Hidriogio_dead")
@@ -21,23 +23,24 @@ func _on_DeathScreen_restart_scene():
 	$Screens/DeathScreen/Label.hide()
 	
 	
-func activate():
-	show()
-	$Hidriogio.active = true
-	$Hidriogio/Camera2D.current = true
-
-
-func deactivate():
-	hide()
-	$Hidriogio.active = false
-	$Hidriogio/Camera2D.current = false
+#func activate():
+#	show()
+#	$Hidriogio.active = true
+#	$Hidriogio/Camera2D.current = true
+#
+#
+#func deactivate():
+#	hide()
+#	$Hidriogio.active = false
+#	$Hidriogio/Camera2D.current = false
 
 
 func _on_Wind_Element_area_entered(area):
 	$GotElement.show_message()
 	yield(get_tree().create_timer(2), "timeout")
-	$GotElement.hide_message()
-	emit_signal("finished")
+	Global.goto_scene("res://src/Levels/Mining_Dungeon.tscn")
+#	$GotElement.hide_message()
+#	emit_signal("finished")
 
 
 func _on_Fan_area_entered(area):

@@ -1,9 +1,10 @@
 extends Node2D
 
-signal finished
+#signal finished
 
 func _ready():
-	pass
+	$OxiChef.active = true
+	$OxiChef/Camera2D.current = true
 
 
 func _on_OxiChef_dead():
@@ -19,16 +20,16 @@ func _on_DeathScreen_restart_scene():
 	$DeathScreen/Label.hide()
 
 
-func activate():
-	show()
-	$OxiChef.active = true
-	$OxiChef/Camera2D.current = true
-
-
-func deactivate():
-	hide()
-	$OxiChef.active = false
-	$OxiChef/Camera2D.current = false
+#func activate():
+#	show()
+#	$OxiChef.active = true
+#	$OxiChef/Camera2D.current = true
+#
+#
+#func deactivate():
+#	hide()
+#	$OxiChef.active = false
+#	$OxiChef/Camera2D.current = false
 
 
 
@@ -39,5 +40,6 @@ func _on_Beer_area_entered(area):
 func _on_WaterElement_area_entered(area):
 	$GotElement.show_message()
 	yield(get_tree().create_timer(2), "timeout")
-	$GotElement.hide_message()
-	emit_signal("finished")
+	Global.goto_scene("res://src/Levels/Sky_Tower.tscn")
+	#$GotElement.hide_message()
+	#emit_signal("finished")

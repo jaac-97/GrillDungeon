@@ -28,7 +28,5 @@ position = Vector2( -3698.04, 1844.87 )
 [node name="EndScreen" parent="." instance=ExtResource( 7 )]
 
 [node name="FinalScreen" parent="." instance=ExtResource( 8 )]
-[connection signal="finished" from="WaterTemple" to="." method="_on_WaterTemple_finished"]
 [connection signal="finished" from="Sky_Tower" to="." method="_on_Sky_Tower_finished"]
 [connection signal="finished" from="Mining_Cave" to="." method="_on_Mining_Cave_finished"]
-[connection signal="start_game" from="StartScreen" to="." method="_on_StartScreen_start_game"]
