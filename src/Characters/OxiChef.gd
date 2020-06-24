@@ -18,7 +18,7 @@ var animation = ""
 # Jump
 export var fall_gravity_scale = 100.0
 export var low_jump_gravity_scale = 205.0
-export var jump_power := 370.0
+export var jump_power := 470.0
 var jump_released = false
 # Physics
 export var gravity_scale = 100.0

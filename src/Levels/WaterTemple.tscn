@@ -957,9 +957,9 @@ shape = SubResource( 26 )
 texture = ExtResource( 11 )
 [connection signal="dead" from="OxiChef" to="." method="_on_OxiChef_dead"]
 [connection signal="interact" from="OxiChef" to="Switches/SW1" method="_on_OxiChef_interact"]
+[connection signal="interact" from="OxiChef" to="Switches/SW4" method="_on_OxiChef_interact"]
 [connection signal="interact" from="OxiChef" to="Switches/SW3" method="_on_OxiChef_interact"]
 [connection signal="interact" from="OxiChef" to="Switches/SW2" method="_on_OxiChef_interact"]
-[connection signal="interact" from="OxiChef" to="Switches/SW4" method="_on_OxiChef_interact"]
 [connection signal="restart_scene" from="DeathScreen" to="." method="_on_DeathScreen_restart_scene"]
 [connection signal="area_entered" from="DeathZonesU/Spikes" to="OxiChef" method="_on_Spikes_area_entered"]
 [connection signal="area_entered" from="DeathZonesU/Spikes2" to="OxiChef" method="_on_Spikes_area_entered"]
